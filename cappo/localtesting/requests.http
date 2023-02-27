@@ -1,0 +1,73 @@
+GET http://localhost:4004/CatalogService/POs?$expand=Items
+
+
+### Get Employees
+GET http://localhost:4004/CatalogService/EmployeesSet/02BD2137-0890-1EEA-A6C2-BB55C19847FF
+
+###Update Salary of employee
+Patch http://localhost:4004/CatalogService/EmployeesSet/02BD2137-0890-1EEA-A6C2-BB55C19787FB
+Content-Type: application/json
+
+{
+     "salaryAmount": 100000000,
+     "Currency_code": "INR"
+}
+
+###Display all POs
+GET http://localhost:4004/CatalogService/POs
+
+
+###get single PO
+GET http://localhost:4004/CatalogService/POs/74867AD200E41EDBA5D8B0C98DC28052
+
+###Boost a PO - run an action on a PO
+POST http://localhost:4004/CatalogService/POs('74867AD200E41EDBA5D8B0C98DC28052')/CatalogService.boost
+Content-Type: application/json
+
+{
+
+}
+
+###get largest PO
+GET http://localhost:4004/CatalogService/POs('74867AD200E41EDBA5D8B0C98DC28052')/CatalogService.largestOrder()
+
+
+###get custom read call
+GET http://localhost:4004/MyService/ReadEmoloyeeSet
+
+
+###Post custom create call
+POST http://localhost:4004/MyService/InsertEmoloyeeSet
+Content-Type: application/json
+
+{
+      "ID": "02BD2137-0890-1EEA-A6C2-BB55C19847FF",
+      "nameFirst": "John",
+      "nameMiddle": "Max",
+      "nameLast": "Cena",
+      "nameInitials": null,
+      "sex": "M",
+      "language": "E",
+      "phoneNumber": null,
+      "email": "karl.kessler@itelo.info",
+      "loginName": "KESSLERK",
+      "Currency_code": "USD",
+      "salaryAmount": 97455,
+      "accountNumber": "7788990011",
+      "bankId": "26005885",
+      "bankName": "My Bank of New York"
+}
+
+
+###update custom callc
+PUT http://localhost:4004/MyService/UpdateEmoloyeeSet/02BD2137-0890-1EEA-A6C2-BB55C19847FF
+Content-Type: application/json
+
+{
+      
+      "nameFirst": "John"
+}
+
+
+###get all products
+GET http://localhost:4004/CatalogService/productSet

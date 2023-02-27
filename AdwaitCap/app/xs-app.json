@@ -1,0 +1,17 @@
+{
+    "welcomeFile": "productapp/webapp/",
+    "authenticationMethod": "none",
+    "sessionTimeout": 10,
+    "pluginMetadataEndpoint": "/metadata",
+    "routes": [
+      {
+        "source": "^/productapp/webapp/(.*)",
+        "target": "$1",
+        "localDir": "productapp/webapp/"
+      },
+      {
+        "source": "^/(.*)$",
+        "destination": "srv-api"
+      }
+    ]
+  }

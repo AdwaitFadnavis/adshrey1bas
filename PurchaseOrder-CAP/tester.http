@@ -1,0 +1,12 @@
+###calling boost action
+
+POST  http://localhost:4004/CatalogService/POs/000b70a5-abe1-4139-8d92-ae7fef917da3/CatalogService.Boost
+Content-Type: application/json
+
+{}
+
+###call all pos
+GET  http://localhost:4004/CatalogService/POs/000b70a5-abe1-4139-8d92-ae7fef917da3
+
+###calling largest order function
+GET http://localhost:4004/CatalogService/POs/000b70a5-abe1-4139-8d92-ae7fef917da3/CatalogService.largestPO()

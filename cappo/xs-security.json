@@ -1,0 +1,40 @@
+{
+    "xsappname": "cappo",
+    "scopes": [
+        {
+            "name": "$XSAPPNAME.Viewer",
+            "description": "Can view data for CAPPO Application"
+        },
+        {
+            "name": "$XSAPPNAME.Admin",
+            "description": "Can edit data for CAPPO Application"
+        }
+    ],
+    "role-templates": [
+        {
+            "name": "Viewer",
+            "description": "View all Details",
+            "default-role-name": "Viewer: Authorized to Read All Details",
+            "scope-references": [
+                "$XSAPPNAME.Viewer"
+            ]
+        },
+        {
+            "name": "Admin",
+            "description": "Edit, delete details",
+            "scope-references": [
+                "$XSAPPNAME.Admin"
+            ]
+        }
+    ],
+    "authorities": [
+        "$ACCEPT_GRANTED_AUTHORITIES"
+    ],
+    "oauth2-configuration": {
+        "token-validity": 9000,
+        "redirect-uris": [
+            "https://*.cfapps.us10-001.hana.ondemand.com/login/callback"
+        ]
+    },
+    "xsenableasyncservice": "true"
+}

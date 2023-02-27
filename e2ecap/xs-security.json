@@ -1,0 +1,41 @@
+{
+    "xsappname": "e2ecap",
+    "tenant-mode":"dedicated",
+    "scopes": [
+        {
+            "name": "$XSAPPNAME.Display",
+            "description": "display"
+        },
+        {
+            "name": "$XSAPPNAME.Edit",
+            "description": "edit"
+        }
+    ],
+    "role-templates": [
+        {
+            "name": "Viewer",
+            "description": "View all products",
+            "default-role-name": "Viewer: Authorized to Read All products",
+            "scope-references": [
+                "$XSAPPNAME.Display"
+            ]
+        },
+        {
+            "name": "Editor",
+            "description": "Edit, delete products",
+            "scope-references": [
+                "$XSAPPNAME.Edit"
+            ]
+        }
+    ],
+    "authorities": [
+        "$ACCEPT_GRANTED_AUTHORITIES"
+    ],
+    "oauth2-configuration": {
+        "token-validity": 9000,
+        "redirect-uris": [
+            "https://*.cfapps.eu10.hana.ondemand.com/login/callback"
+        ]
+    },
+    "xsenableasyncservice": "true"
+}
